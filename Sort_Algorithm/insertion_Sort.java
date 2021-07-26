@@ -22,7 +22,7 @@ public class insertion_Sort {
 			System.out.print(arr[j] + " ");
 		
 	}
-	// ¿À¸§Â÷¼ø
+	// ì˜¤ë¦„ì°¨ìˆœ (Ascending order)
 	public static int[] insertion_Sort_ASCE(int[] arr) {
 		for(int i=1 ; i<arr.length ; i++) {
 				int index = i;
@@ -38,7 +38,7 @@ public class insertion_Sort {
 		}
 		return arr;
 	} 
-	// ³»¸²Â÷¼ø
+	// ë‚´ë¦¼ì°¨ìˆœ (Descending order)
 	public static int[] insertion_Sort_DESC(int[] arr) {
 		for(int i=1 ; i<arr.length ; i++) {
 				int index = i;

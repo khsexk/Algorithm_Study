@@ -15,4 +15,4 @@
 ### 2. Deepening Algorithm
 |Index|Topic|Date|
 |-----|-----|----|
-|1|Greedy Algorithm||
+|1|[Greedy Algorithm](https://github.com/khsexk/Alkorithm_Study/tree/main/Deepening%20Algorithm/Greedy%20Algorithm)|2022.01.25|

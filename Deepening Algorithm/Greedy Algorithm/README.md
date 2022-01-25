@@ -118,7 +118,7 @@ public class Solution{
         int result = a.f - b.f;
         
         if(result == 0)
-          return a.s.compareTo(b.s);
+          return a.s-b.s;
         return result;
       } // compare
     });

@@ -79,3 +79,63 @@ Quiz 02.
 <div align="center">
   <img src="https://user-images.githubusercontent.com/56003992/150920918-f7121ae1-c5cf-4505-83c2-8d548e88469b.png" width="512" height="70">
 </div>
+</br>
+  
+☛ N개의 활동이 있고 각 활동에는 시작 시간(s) 및 종료 시간(f)이 있을 때, 한 사람이 할 수 있는 최대 활동의 수를 구하는 문제
+</br>    
+
+***sol)***  
+1️⃣ 종료 시간 기준으로 정렬 후 맨 앞 요소인 (i=1) select  
+2️⃣ (i=1)의 종료시간 이후 가능 활동인 (i=4) select  
+3️⃣ (i=4)의 종료시간 이후 가능 활동인 (i=8) select  
+4️⃣ (i=8)의 종료시간 이후 가능 활동인 (i=11) select  
+</br>    
+
+ 이제 코드로 나타내보자. 먼저 Action 클래스가 다음과 같이 구성돼 있다고 가정하자.
+```java
+class Action {
+    String name;
+    int s;
+    int f;
+    
+    public Action(String name, int startTime, int finishTime){
+        this.name = name;
+        this.s = startTime;
+        this.f = finishTime;
+    }
+}
+```
+</br>    
+  
+ 다음은 Solution 코드이다.
+``` java
+public class Solution{
+  public ArrayList<Action> solution(ArrayList<Action> actionList) {
+    // 종료시간 기준 정렬 (같을 시 시작시간 정렬)
+    Arrays.sort(actionList, new Comparator<Action>() {
+      @Override
+      public int compare(Action a, Action b){
+        int result = a.f - b.f;
+        
+        if(result == 0)
+          return a.s.compareTo(b.s);
+        return result;
+      } // compare
+    });
+    
+    int time = 0;
+    ArrayList<Action> doList = new ArrayList<>();
+    
+    for(Action act : actionList){
+      if(time <= act.s){
+        time = act.f;
+        doList.add(act);
+      }
+    }
+    
+    return doList;
+  } // method
+} // class
+```
+  
+* * *

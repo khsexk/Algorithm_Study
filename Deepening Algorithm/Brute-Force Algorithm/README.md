@@ -41,9 +41,89 @@ iii) 실제 답을 구할 수 있는지 적용
 
 ex) 예시 문제 → [BOJ 11723 집합](https://www.acmicpc.net/problem/11723)
 
-### iii) Recursive Fuction
+### iii) Recursive
+: 말 그대로 자기 자신을 호출  
+  
+```text
+1) 재귀를 탈출하기 위한 탈출 조건 필요
+2) 현재 함수으 상태를 저장하는 Parameter 필요
+3) Return문을 신경쓸 것
+```
+☛ DP와의 차이점  
+: DP는 작은 문제가 큰 문제와 동일한 구조를 가져 큰 문제의 답을 구할 시에 작은 문제의 결과를 기억한 뒤 그대로 사용하여 수행속도르 빠르게 함  
+: 완전탐색은 크고 작은 문제의 구조가 다를 수 있고, 해결 가능한 방법을 모두 탐색  
+</br>  
+1. [로또](https://www.acmicpc.net/problem/6603)  
+2. [암호 만들기](https://www.acmicpc.net/problem/1759)  
+3. [일곱 난쟁이](https://www.acmicpc.net/problem/2309)  
+4. [부분 수열의 합](https://www.acmicpc.net/problem/1182)  
 
 ### iv) Permutation
+: 임의의 수열이 있을 때, 그것을 다른 순서로 연산하는 방법  
+</br>
+#### ① Swap을 이용한 구현  
+<img width="580" alt="swap" src="https://user-images.githubusercontent.com/56003992/152120314-324fb689-5cc1-4ade-9179-06f61de4f794.png">
+
+- 배열의 첫 값부터 순서대로 하나씩 바꾸며 모든 값을 한번씩 SWAP
+- depth를 기준으로, depth보다 index가 작은 값들은 고정, 큰 값들은 SWAP 진행
+- 순열들의 순서 보장 X 
+```java
+void swapPermutation(int[] arr, int depth, int n, int r){
+  if(depth == r){
+    배열 출력
+    return;
+  }
+  for(int i=depth ; i<n ; i++{
+    swap(arr, depth, i);
+    swapPermutation(arr, depth+1, n, r);
+    swap(arr, depth, i);
+  }
+}
+static void swap(int[] arr, int depth, int i) { 
+  int temp = arr[depth];
+	arr[depth] = arr[i];
+	arr[i] = temp;
+}
+```
+
+  
+</br> 
+
+#### ② DFS로 구현 
+<img width="579" alt="dfs" src="https://user-images.githubusercontent.com/56003992/152121515-767ba0b5-d9f4-4612-ac5c-42b3ad8c90e6.png">
+
+- DFS로 모든 인덱스를 방문하여 output에 값을 넣음
+- depth는 output에 들어간 숫자으 길이오 같음
+- 순열들의 순서 보장 O
+```java
+void dfsPermutation(int[] arr, int[] output, boolean[] visited, int depth, int n, int r) {
+	if(depth == r) {
+		print(output, r); //순열 출력을 위한 print 함수 
+		return;
+	}
+
+	for(int i = 0; i < n; i++) {
+		if(visited[i] != true) {
+			visited[i] = true;
+			output[depth] = arr[i];
+			per2(arr, output, visited, depth + 1, n, r);    
+			visited[i] = false;
+		}
+	}
+}
+```
+  </br>  
+  
+#### ❖ 실행결과!
+<img width="192" alt="exe" src="https://user-images.githubusercontent.com/56003992/152123019-b74f506e-449e-429d-ab75-5638909d00f9.png"> 
+
+- SWAP을 이용했을 때 순서가 보장되지 않았음
+- 테스트케이스가 많아질수록 DFS를 이용한 메서드 실행속도가 SWAP을 이용한 메서드 실행속도보다 빨라짐
+  
+  
+</br>  
+  
+ex) 예시 문제 → [BOJ 11723 모든 순열](https://www.acmicpc.net/problem/10974)
 
 ### v) BFS /DFS
 : 이후 따로 다루어 볼 예정

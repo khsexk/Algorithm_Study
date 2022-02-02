@@ -93,7 +93,7 @@ static void swap(int[] arr, int depth, int i) {
 <img width="579" alt="dfs" src="https://user-images.githubusercontent.com/56003992/152121515-767ba0b5-d9f4-4612-ac5c-42b3ad8c90e6.png">
 
 - DFS로 모든 인덱스를 방문하여 output에 값을 넣음
-- depth는 output에 들어간 숫자으 길이오 같음
+- depth는 output에 들어간 숫자의 길이와 같음
 - 순열들의 순서 보장 O
 ```java
 void dfsPermutation(int[] arr, int[] output, boolean[] visited, int depth, int n, int r) {

@@ -16,3 +16,4 @@
 |Index|Topic|Date|
 |-----|-----|----|
 |1|[Greedy Algorithm](https://github.com/khsexk/Alkorithm_Study/tree/main/Deepening%20Algorithm/Greedy%20Algorithm)|2022.01.25|
+|2|[Brute-Force Alogorithm](https://github.com/khsexk/Alkorithm_Study/tree/main/Deepening%20Algorithm/Brute-Force%20Algorithm)|2022.02.01|

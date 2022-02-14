@@ -63,3 +63,6 @@
 - 검색 대상의 규모가 크지 않고, 검색 시작 지점으로부터 원하는 대상이 별로 멀지 않을 때
 
 * * *
+
+## etc. DFS와 BFS 한번에 익히기
+☛ [BOJ 1260: DFS와 BFS](https://www.acmicpc.net/problem/1260) / [정답 코드 using JAVA](https://github.com/khsexk/Algorithm_Solution--Java/blob/main/BOJ/src/DFS_BFS/BOJ_1260.java)

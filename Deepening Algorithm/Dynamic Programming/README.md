@@ -24,3 +24,13 @@ ii) 중복되는 부분 문제 (Overlapping Subproblem)
 &nbsp; 위와 같은 경우 DP를 사용하면 단순 재귀를 사용했을 때보다 높은 효율의 코드를 작성할 수 있다.
  
 * * *
+
+## 3. DP 풀이 단계
+```markdown
+1) 해결하고자 하는 문제가 DP 문제인지 확인
+2) 최소한의 매개변수를 가지고 상태 표현식(State Expression) 결정
+3) 상태의 관계를 수립 → 점화식 세우기
+4) Tabulation(Bottom Up) 또는 Memoization(Top Down)을 이용하여 문제 해결
+```
+
+* * *
